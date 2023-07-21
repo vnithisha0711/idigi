@@ -1,0 +1,9 @@
+login must be jwt
+pattern validation for angular form
+submit button must be disable , should be enabled only when correct data has been entered, 
+Error handling with in case of API call and custom error page must be shown
+user list must be able to be exported to excel sheet on a button click
+user list must be able to be exported to pdf on a button click
+while add the record , an email notification must be sent to the email id entered 
+OTP notification
+back button disabled

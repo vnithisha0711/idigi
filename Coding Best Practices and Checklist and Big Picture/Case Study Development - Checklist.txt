@@ -1,0 +1,118 @@
+Case Study Development - Checklist
+--------------------------------------
+1. Reference Documents - 1 Day
+	a. Technical Design Diagrams
+	b. PPT
+	c. UserStories
+	d. task list- Sprint 
+	e. TestCases
+	f. functional Requirement
+
+Primary SPOC & Secondary SPOC - Scrum Master for another group 
+Scrum Meeting 
+2. Service/Module identification and distribution among each team member.
+
+3. Backend development (eg: listAllProducts(), register())
+	a. Entity (Product) @Entity @Id productId (Student)
+	b. Exception Handling & Loggers- AOP (ProductException)@ControllerAdvice (StudentException)
+	c. DAO/Repository (ProductDao) implements JPARepository  @Repository(StudentDao)
+	d. Service (ProductServices - addProduct, updateProduct etc...) @Service
+call Dao and return to controller - validation or calculations
+(StudentService -register())
+	e. JUnit test case (ProductTest) Mockito @JMokito @TestCase (StudentTest -registerTest())- Mokito framework
+	f. RestController (ProductController) API  @RestController
+(StudentController)
+		controller level @RequestMapping (API)
+		Methods level @RequestMapping
+				-get - (list, search, select) - @GetMapping
+				-post - (add, insert , save) - @PostMapping
+				-put- (merge, edit,update) - @PutMapping 
+								(update whole object)
+				-delete- (delete, remove) - @DeleteMapping
+				-patch - (list, search) - @PatchMapping		
+					(only part of the object will be updated)
+http methods - get,put,post,delete,patch,connect,head,option,trace
+
+	g. API test service via Postman & document via Swagger (pom.xml, controller level annotation , method level annotation)
+
+Advance part
+	[h. Authentication using JWT/OAuth (open authentication) ***** (login)
+-------------------------------------------------------------------
+	i. API Gateway - (Zull)
+	J. Eureka Server/client 
+	k. Load Balancer - (Ribbon)
+	l. Falut Tolerrance. - Hystrix (circut breaker)]
+4. UI Development(Angular/React)
+
+	a. Model  -(Product) (Student)
+	   Service (HttpClient - to call backend API) ProductService (StudentService)
+	
+	b. Component (ListAllProductComponent, pagination, Sorting & Search )
+			DeleteProduct (RegisterStudent)
+	c. Login - JWT 
+	d. Error handling - ErrorHandlingComponent 
+	e. Use Material UI Angular
+	f. Form Validations (Angular/React) AddProduct & EditProduct
+HOME Page - common 
+	g. Header & Footer
+	i. Navigation & Carousels
+5. Use Git for version control - DONT USE GITHUB/BITBUcket.
+	Kindly create local private repository-sharepoint/onedrive and use it instead of github repo. (Create a sub-channel of your group which will act as a locat repo)
+
+DONT use CG / CapG / Capgemini kind of package/class/project names
+
+6. Best Practice- comments, naming conventions, indentations, formatting.
+RESTFul API -https://www.javaguides.net/2018/06/restful-api-design-best-practices.html
+
+dont use primitive types/ use wrapper class to declare instance variables in entity class.
+
+@Entity
+class Student{
+
+int id;//wrong
+long id;//wrong
+@Id( auto-generated)
+Long studentId;
+
+
+class Product{
+int id;//worng
+long id; //wrong
+
+Long productId;//correct 
+Long productId; //correct
+Double price;
+String prodDesc;
+}
+-----------
+1. proper error msg must be retured by the restful API.
+
+2. Please maintain all the restful api end point url in one notepad file.
+
+3. Id must be auto-generated.
+
+4. return type of all Controller Method must be ResponseEntity
+----------------
+
+7. SOLID Principals /design patterns
+8. Dependencies injection, IOC
+--- phase 2-----------
+9. CD/CI - all the jenkin stages
+10. SonarQube - code coverage should be proper alinged 
+11. Containers (Docker+Kubernetes)
+12. Cloud - AWS Deployment 
+
+HTTP Method - In Angular HttpClient - DI - contructor DI
+
+[get 
+put
+post
+delete
+patch ]
+connect
+head
+option
+trace
+
+
+HTTP error code
