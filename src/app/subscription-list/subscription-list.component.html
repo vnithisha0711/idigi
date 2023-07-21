@@ -1,0 +1,22 @@
+<h2> Subscription List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> SubId </th>
+            <th> SubMonth </th>
+            <th> SubYear </th>
+            <th> SubType </th>
+            <th> Amount </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let sub of subscription ">
+            <td> {{ sub.id }} </td>
+            <td> {{ sub.subMonth }} </td>
+            <td> {{ sub.subYear }} </td>   
+            <td> {{ sub.subType }} </td>     
+            <td> {{ sub.amount }} </td>
+
+        </tr>
+    </tbody>
+</table>
